@@ -108,3 +108,23 @@ train_ds, val_ds, test_ds = get_dataset_partitions_tf(dataset)
 train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size=tf.data.AUTOTUNE)
 val_ds = val_ds.cache().shuffle(1000).prefetch(buffer_size=tf.data.AUTOTUNE)
 test_ds = test_ds.cache().shuffle(1000).prefetch(buffer_size=tf.data.AUTOTUNE)
+
+#Building the model
+#Creating a layer for resizing and normalization
+
+#Data Pre-processing
+resize_and_rescale = keras.Sequential([
+   keras.layers.experimental.preprocessing.Resizing(IMAGE_SIZE, IMAGE_SIZE),
+   keras.layers.experimental.preprocessing.Rescaling(1./255),
+])
+
+#Data Augmentation
+data_augmentation = tf.keras.Sequential([
+    layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical"),
+    layers.experimental.preprocessing.RandomRotation(0.2),
+])
+
+#Applying Data Augmentation to Train Dataset
+train_ds = train_ds.map(
+    lambda x, y: (data_augmentation(x, training=True), y)
+).prefetch(buffer_size=tf.data.AUTOTUNE)
