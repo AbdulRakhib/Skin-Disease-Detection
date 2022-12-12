@@ -41,3 +41,26 @@ import warnings
 
 warnings.simplefilter(action="ignore")
 
+#Set all the Constants
+IMAGE_SIZE = 256
+BATCH_SIZE = 32
+CHANNELS = 3
+EPOCHS = 20
+
+#Import data into tensorflow dataset object
+dataset = tf.keras.preprocessing.image_dataset_from_directory(
+    "SKINDISEASEDETECTION2/SkinDiseaseType",
+    image_size = (IMAGE_SIZE, IMAGE_SIZE),
+    batch_size = BATCH_SIZE
+)
+
+class_names = dataset.class_names
+class_names
+
+#Visulalize some of the images from the datsset
+for image_batch, label_batch in dataset.take(1):
+  for i in range(16):
+    ax = plt.subplot(4,4,i+1)
+    plt.imshow(image_batch[i].numpy().astype("uint8"))
+#     plt.title(class_names[label_batch[i]])
+    plt.axis("off")
