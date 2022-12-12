@@ -128,3 +128,39 @@ data_augmentation = tf.keras.Sequential([
 train_ds = train_ds.map(
     lambda x, y: (data_augmentation(x, training=True), y)
 ).prefetch(buffer_size=tf.data.AUTOTUNE)
+
+
+#Model Archiecture
+input_shape = (BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, CHANNELS)
+n_classes = 3
+
+model = models.Sequential([
+    resize_and_rescale,
+    layers.Conv2D(32, kernel_size = (3,3), activation='relu', input_shape=input_shape),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64,  kernel_size = (3,3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64,  kernel_size = (3,3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Flatten(),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(n_classes, activation='softmax'),
+])
+
+model.build(input_shape=input_shape)
+
+# Printing the model summary
+model.summary()
+
+#Compiling the Model
+model.compile(
+    optimizer='adam',
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+    metrics=['accuracy']
+)
