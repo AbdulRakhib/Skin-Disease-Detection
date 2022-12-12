@@ -1,1 +1,4 @@
-
+import zipfile as zf
+files = zf.ZipFile("New Dataset (All together) (2).zip", "r")
+files.extractall("SKINDISEASEDETECTION2")
+files.close()
