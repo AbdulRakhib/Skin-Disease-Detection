@@ -1,1 +1,37 @@
+#Set all the Dependencies
+import PIL
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+sns.set_style("darkgrid")
+import os
+import tensorflow as tf
+%matplotlib inline
 
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras import models, layers
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D
+from tensorflow.python.keras.models import Sequential
+from tensorflow.keras import layers
+from tensorflow.keras import datasets, layers, models
+from matplotlib.colors import ListedColormap
+from PIL import Image
+from sklearn.svm import SVC
+from tensorflow.keras.models import Sequential
+from sklearn import preprocessing
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.neighbors import KNeighborsClassifier, NeighborhoodComponentsAnalysis, LocalOutlierFactor
+from sklearn.metrics import confusion_matrix, accuracy_score, mean_squared_error, r2_score, roc_auc_score, roc_curve, classification_report
+from sklearn.decomposition import PCA
+from tensorflow.keras.utils import to_categorical
+from IPython.display import HTML
+from glob import glob
+from PIL import Image
+import warnings
+
+warnings.simplefilter(action="ignore")
