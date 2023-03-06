@@ -1,0 +1,364 @@
+.main {
+    margin: 20px;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: #f6f9ff;
+    color: #444444;
+}
+
+a {
+    color: #4154f1;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #717ff5;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nunito", sans-serif;
+}
+
+.pagetitle {
+    margin-bottom: 10px;
+}
+
+.pagetitle h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #012970;
+}
+
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+}
+
+.card-header,
+.card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+}
+
+.card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-body {
+    padding: 0 20px 20px 20px;
+}
+
+.card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.alert-heading {
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+.btn-close {
+    background-size: 25%;
+}
+
+.btn-close:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.accordion-item {
+    border: 1px solid #ebeef4;
+}
+
+.accordion-button:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #012970;
+    background-color: #f6f9ff;
+}
+
+.accordion-flush .accordion-button {
+    padding: 15px 0;
+    background: none;
+    border: 0;
+}
+
+.accordion-flush .accordion-button:not(.collapsed) {
+    box-shadow: none;
+    color: #4154f1;
+}
+
+.accordion-flush .accordion-body {
+    padding: 0 0 15px 0;
+    color: #3e4f6f;
+    font-size: 15px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    color: #899bbd;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: #899bbd;
+    transition: 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #51678f;
+}
+
+.breadcrumb .breadcrumb-item::before {
+    color: #899bbd;
+}
+
+.breadcrumb .active {
+    color: #51678f;
+    font-weight: 600;
+}
+
+.nav-tabs-bordered {
+    border-bottom: 2px solid #ebeef4;
+}
+
+.nav-tabs-bordered .nav-link {
+    margin-bottom: -2px;
+    border: none;
+    color: #2c384e;
+}
+
+.nav-tabs-bordered .nav-link:hover,
+.nav-tabs-bordered .nav-link:focus {
+    color: #4154f1;
+}
+
+.nav-tabs-bordered .nav-link.active {
+    background-color: #fff;
+    color: #4154f1;
+    border-bottom: 2px solid #4154f1;
+}
+
+.dashboard .filter {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+}
+
+.dashboard .filter .icon {
+    color: #aab7cf;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.dashboard .filter .icon:hover,
+.dashboard .filter .icon:focus {
+    color: #4154f1;
+}
+
+.dashboard .filter .dropdown-header {
+    padding: 8px 15px;
+}
+
+.dashboard .filter .dropdown-header h6 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #aab7cf;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.dashboard .filter .dropdown-item {
+    padding: 8px 15px;
+}
+
+.dashboard .info-card {
+    padding-bottom: 10px;
+}
+
+.dashboard .info-card h6 {
+    font-size: 28px;
+    color: #012970;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard .card-icon {
+    font-size: 32px;
+    line-height: 0;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.dashboard .sales-card .card-icon {
+    color: #4154f1;
+    background: #f6f6fe;
+}
+
+.dashboard .revenue-card .card-icon {
+    color: #2eca6a;
+    background: #e0f8e9;
+}
+
+.dashboard .customers-card .card-icon {
+    color: #ff771d;
+    background: #ffecdf;
+}
+
+.dashboard .activity {
+    font-size: 14px;
+}
+
+.dashboard .activity .activity-item .activite-label {
+    color: #888;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-width: 64px;
+}
+
+.dashboard .activity .activity-item .activite-label::before {
+    content: "";
+    position: absolute;
+    right: -11px;
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    background-color: #eceefe;
+}
+
+.dashboard .activity .activity-item .activity-badge {
+    margin-top: 3px;
+    z-index: 1;
+    font-size: 11px;
+    line-height: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 3px solid #fff;
+    flex-grow: 0;
+}
+
+.dashboard .activity .activity-item .activity-content {
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.dashboard .activity .activity-item:first-child .activite-label::before {
+    top: 5px;
+}
+
+.dashboard .activity .activity-item:last-child .activity-content {
+    padding-bottom: 0;
+}
+
+.dashboard .news .post-item+.post-item {
+    margin-top: 15px;
+}
+
+.dashboard .news img {
+    width: 80px;
+    float: left;
+    border-radius: 5px;
+}
+
+.dashboard .news h4 {
+    font-size: 15px;
+    margin-left: 95px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dashboard .news h4 a {
+    color: #012970;
+    transition: 0.3s;
+}
+
+.dashboard .news h4 a:hover {
+    color: #4154f1;
+}
+
+.dashboard .news p {
+    font-size: 14px;
+    color: #777777;
+    margin-left: 95px;
+}
+
+.dashboard .recent-sales {
+    font-size: 14px;
+}
+
+.dashboard .recent-sales .table thead {
+    background: #f6f6fe;
+}
+
+.dashboard .recent-sales .table thead th {
+    border: 0;
+}
+
+.dashboard .recent-sales .dataTable-top {
+    padding: 0 0 10px 0;
+}
+
+.dashboard .recent-sales .dataTable-bottom {
+    padding: 10px 0 0 0;
+}
+
+.dashboard .top-selling {
+    font-size: 14px;
+}
+
+.dashboard .top-selling .table thead {
+    background: #f6f6fe;
+}
+
+.dashboard .top-selling .table thead th {
+    border: 0;
+}
+
+.dashboard .top-selling .table tbody td {
+    vertical-align: middle;
+}
+
+.dashboard .top-selling img {
+    border-radius: 5px;
+    max-width: 60px;
+}
