@@ -122,7 +122,8 @@ def imageUpload():
     # img = Image.open(img_file)
 
     #tf.keras.utils.save_img("uploadedImage/uploaded_image.jpg", img_array, data_format=None , file_format=None)
-    #img_array = img_array / 255.0  # Normalize the image pixels
+    #img_array = img_array
+    # / 255.0  # Normalize the image pixels
 
     # Resize the image to match the input shape of the model
     # img_array = tf.image.resize(img_array, [256, 256])
@@ -178,9 +179,8 @@ def imageUpload():
 
     prediction = loadedModel.predict(input_tensor)
     classNames = ['Acne', 'Eczema', 'Melanoma Skin Cancer Nevi and Moles', 'Psoriasis']
-    predicted_class = classNames[np.argmax(prediction[0])]
-    confidence = round(100 * (np.max(prediction[0])))
-    print(prediction)
+    predicted_class = classNames[np.argmax(prediction)]
+    confidence = round(100 * (np.max(prediction)))
     plt.title(f"Predicted Disease: {predicted_class}.\n Accuracy level: {confidence}%")
     plt.axis("off")
     plt.show()
